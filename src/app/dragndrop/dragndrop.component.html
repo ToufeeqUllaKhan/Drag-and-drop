@@ -1,0 +1,394 @@
+<div class="cards">
+  <h1 style="font-size: xx-large;">Total Due:
+    <b style="color: green;">AED 177383.69</b>
+  </h1>
+  <div class="row">
+    <div class="col-3">
+      <div class="example-container">
+        <h2>open</h2>
+
+        <div cdkDropList #openList="cdkDropList" [cdkDropListData]="open" [cdkDropListConnectedTo]="[wipList]"
+          class="example-list" (cdkDropListDropped)="drop($event)">
+          <div class="example-box" *ngFor="let list of open" cdkDrag>
+            <div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <label style="color: green;font-size: 20px;"><b>{{list.no}}</b> </label> &nbsp;
+                  <span class="badge badge-pill badge-danger">PAYMENT DUE</span>
+                  <div style=" margin-top: -5px; ">
+                    <button type="button" class="btn btn-outline outline"
+                      style=" border-color: darkviolet; color: darkviolet;"><b> WASHING </b></button> &nbsp;
+                    <button type="button" class="btn btn-outline-warning outline"><b> RASHID </b></button>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div>
+                    <span> <i class="material-icons-outlined"> attach_file </i> </span>
+                    <a href="#" style="vertical-align: top;">Repair Order</a>
+                  </div>
+                  <div>
+                    <span> <i class="material-icons-outlined"> attach_file </i> </span>
+                    <a href="#" style="vertical-align: top;">Invoice</a>
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div>
+                <span> <i class="material-icons-outlined"> directions_car </i> </span>
+                <span style="vertical-align: top;"><label>{{list.Car_details}}</label></span>
+              </div>
+              <div class="row">
+                <div>
+                  <span> <i class="material-icons-outlined"> person </i> </span>
+                  <span style="vertical-align: top;"><label>{{list.Name}}</label></span>
+                </div>
+                <div style="margin-top: -36px;">
+                  <img src="assets\whatsapp icon.png" style="width: 34px;margin-left: 200px">
+                  <Label style="color: green;">Whatsapp</Label>
+                </div>
+
+
+              </div>
+              <hr style="margin-top: 10px;">
+              <div class="row" style="margin-top: -10px;">
+
+                <div class="col-4" style="font-size: 12px;">
+                  <div>
+                    <label> INVOICE</label>
+                  </div>
+                  <div>
+                    <b>{{list.Invoice}}</b>
+                  </div>
+                </div>
+                <div class="col-3" style="font-size: 12px;">
+                  <div>
+                    <label> CREATED BY</label>
+                  </div>
+                  <div>
+                    <b>{{list.Createdby}}</b>
+                  </div>
+                </div>
+                <div class="col-5" style="font-size: 12px;">
+                  <div>
+                    <label> COMPLETION DATE</label>
+                  </div>
+                  <div>
+                    <b>{{list.completiondate}}</b>
+                  </div>
+                </div>
+              </div>
+              <hr style="margin-top: 10px;">
+              <div class="row" style="margin-top: -10px;">
+
+                <div class="col-6">
+                  <div>
+                    <label> TOTAL:</label>
+                  </div>
+                  <div>
+                    <b>{{list.Total}}</b>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div style="float: right;">
+                    <label> AMOUNT DUE:</label>
+                  </div>
+                  <div style=" font-size: 30px;color: red; float: right;">
+                    <b>{{list.due}}</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="example-container">
+        <h2>wip</h2>
+
+        <div cdkDropList #wipList="cdkDropList" [cdkDropListData]="wip" [cdkDropListConnectedTo]="[readyList]"
+          class="example-list" (cdkDropListDropped)="drop($event)">
+          <div class="example-box" *ngFor="let list of wip" cdkDrag>
+            <div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <label style="color: green;font-size: 20px;"><b>{{list.no}}</b> </label> &nbsp;
+                  <span class="badge badge-pill badge-danger">PAYMENT DUE</span>
+                </div>
+                <div class="col-sm-6">
+                  <div>
+                    <span> <i class="material-icons-outlined"> attach_file </i> </span>
+                    <a href="#" style="vertical-align: top;">Repair Order</a>
+                  </div>
+                  <div>
+                    <span> <i class="material-icons-outlined"> attach_file </i> </span>
+                    <a href="#" style="vertical-align: top;">Invoice</a>
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div>
+                <span> <i class="material-icons-outlined"> directions_car </i> </span>
+                <span style="vertical-align: top;"><label>{{list.Car_details}}</label></span>
+              </div>
+              <div class="row">
+                <div>
+                  <span> <i class="material-icons-outlined"> person </i> </span>
+                  <span style="vertical-align: top;"><label>{{list.Name}}</label></span>
+                </div>
+                <div style="margin-top: -36px;">
+                  <img src="assets\whatsapp icon.png" style="width: 34px;margin-left: 200px">
+                  <Label style="color: green;">Whatsapp</Label>
+                </div>
+
+
+              </div>
+              <hr style="margin-top: 10px;">
+              <div class="row" style="margin-top: -10px;">
+
+                <div class="col-4" style="font-size: 12px;">
+                  <div>
+                    <label> INVOICE</label>
+                  </div>
+                  <div>
+                    <b>{{list.Invoice}}</b>
+                  </div>
+                </div>
+                <div class="col-3" style="font-size: 12px;">
+                  <div>
+                    <label> CREATED BY</label>
+                  </div>
+                  <div>
+                    <b>{{list.Createdby}}</b>
+                  </div>
+                </div>
+                <div class="col-5" style="font-size: 12px;">
+                  <div>
+                    <label> COMPLETION DATE</label>
+                  </div>
+                  <div>
+                    <b>{{list.completiondate}}</b>
+                  </div>
+                </div>
+              </div>
+              <hr style="margin-top: 10px;">
+              <div class="row" style="margin-top: -10px;">
+
+                <div class="col-6">
+                  <div>
+                    <label> TOTAL:</label>
+                  </div>
+                  <div>
+                    <b>{{list.Total}}</b>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div style="float: right;">
+                    <label> AMOUNT DUE:</label>
+                  </div>
+                  <div style=" font-size: 30px;color: red; float: right;">
+                    <b>{{list.due}}</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="example-container">
+        <h2>Ready</h2>
+
+        <div cdkDropList #readyList="cdkDropList" [cdkDropListData]="ready" [cdkDropListConnectedTo]="[paymentList]"
+          class="example-list" (cdkDropListDropped)="drop($event)">
+          <div class="example-box" *ngFor="let list of ready" cdkDrag>
+            <div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <label style="color: green;font-size: 20px;"><b>{{list.no}}</b> </label> &nbsp;
+                  <span class="badge badge-pill badge-danger">PAYMENT DUE</span>
+                  <div style=" margin-top: -5px; ">
+                    <button type="button" class="btn btn-outline outline"
+                      style=" border-color: darkviolet; color: darkviolet;"><b> WASHING </b></button> &nbsp;
+                    <button type="button" class="btn btn-outline-warning outline"><b> RASHID </b></button>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div>
+                    <span> <i class="material-icons-outlined"> attach_file </i> </span>
+                    <a href="#" style="vertical-align: top;">Repair Order</a>
+                  </div>
+                  <div>
+                    <span> <i class="material-icons-outlined"> attach_file </i> </span>
+                    <a href="#" style="vertical-align: top;">Invoice</a>
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div>
+                <span> <i class="material-icons-outlined"> directions_car </i> </span>
+                <span style="vertical-align: top;"><label>{{list.Car_details}}</label></span>
+              </div>
+              <div class="row">
+                <div>
+                  <span> <i class="material-icons-outlined"> person </i> </span>
+                  <span style="vertical-align: top;"><label>{{list.Name}}</label></span>
+                </div>
+                <div style="margin-top: -36px;">
+                  <img src="assets\whatsapp icon.png" style="width: 34px;margin-left: 200px">
+                  <Label style="color: green;">Whatsapp</Label>
+                </div>
+
+
+              </div>
+              <hr style="margin-top: 10px;">
+              <div class="row" style="margin-top: -10px;">
+
+                <div class="col-4" style="font-size: 12px;">
+                  <div>
+                    <label> INVOICE</label>
+                  </div>
+                  <div>
+                    <b>{{list.Invoice}}</b>
+                  </div>
+                </div>
+                <div class="col-3" style="font-size: 12px;">
+                  <div>
+                    <label> CREATED BY</label>
+                  </div>
+                  <div>
+                    <b>{{list.Createdby}}</b>
+                  </div>
+                </div>
+                <div class="col-5" style="font-size: 12px;">
+                  <div>
+                    <label> COMPLETION DATE</label>
+                  </div>
+                  <div>
+                    <b>{{list.completiondate}}</b>
+                  </div>
+                </div>
+              </div>
+              <hr style="margin-top: 10px;">
+              <div class="row" style="margin-top: -10px;">
+
+                <div class="col-6">
+                  <div>
+                    <label> TOTAL:</label>
+                  </div>
+                  <div>
+                    <b>{{list.Total}}</b>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div style="float: right;">
+                    <label> AMOUNT DUE:</label>
+                  </div>
+                  <div style=" font-size: 30px;color: red; float: right;">
+                    <b>{{list.due}}</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="example-container">
+        <h2>Payment Due</h2>
+
+        <div cdkDropList #paymentList="cdkDropList" [cdkDropListData]="paymentdue"
+          [cdkDropListConnectedTo]="[readyList]" class="example-list" (cdkDropListDropped)="drop($event)">
+          <div class="example-box" *ngFor="let list of paymentdue" cdkDrag>
+            <div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <label style="color: green;font-size: 20px;"><b>{{list.no}}</b> </label> &nbsp;
+                  <span class="badge badge-pill badge-danger">PAYMENT DUE</span>
+
+                </div>
+                <div class="col-sm-6">
+                  <div>
+                    <span> <i class="material-icons-outlined"> attach_file </i> </span>
+                    <a href="#" style="vertical-align: top;">Repair Order</a>
+                  </div>
+                  <div>
+                    <span> <i class="material-icons-outlined"> attach_file </i> </span>
+                    <a href="#" style="vertical-align: top;">Invoice</a>
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div>
+                <span> <i class="material-icons-outlined"> directions_car </i> </span>
+                <span style="vertical-align: top;"><label>{{list.Car_details}}</label></span>
+              </div>
+              <div class="row">
+                <div>
+                  <span> <i class="material-icons-outlined"> person </i> </span>
+                  <span style="vertical-align: top;"><label>{{list.Name}}</label></span>
+                </div>
+                <div style="margin-top: -36px;">
+                  <img src="assets\whatsapp icon.png" style="width: 34px;margin-left: 200px">
+                  <Label style="color: green;">Whatsapp</Label>
+                </div>
+
+
+              </div>
+              <hr style="margin-top: 10px;">
+              <div class="row" style="margin-top: -10px;">
+
+                <div class="col-4" style="font-size: 12px;">
+                  <div>
+                    <label> INVOICE</label>
+                  </div>
+                  <div>
+                    <b>{{list.Invoice}}</b>
+                  </div>
+                </div>
+                <div class="col-3" style="font-size: 12px;">
+                  <div>
+                    <label> CREATED BY</label>
+                  </div>
+                  <div>
+                    <b>{{list.Createdby}}</b>
+                  </div>
+                </div>
+                <div class="col-5" style="font-size: 12px;">
+                  <div>
+                    <label> COMPLETION DATE</label>
+                  </div>
+                  <div>
+                    <b>{{list.completiondate}}</b>
+                  </div>
+                </div>
+              </div>
+              <hr style="margin-top: 10px;">
+              <div class="row" style="margin-top: -10px;">
+
+                <div class="col-6">
+                  <div>
+                    <label> TOTAL:</label>
+                  </div>
+                  <div>
+                    <b>{{list.Total}}</b>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div style="float: right;">
+                    <label> AMOUNT DUE:</label>
+                  </div>
+                  <div style=" font-size: 30px;color: red; float: right;">
+                    <b>{{list.due}}</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
